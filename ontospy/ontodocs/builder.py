@@ -47,6 +47,7 @@ if StrictVersion(django.get_version()) > StrictVersion('1.7'):
                 ONTODOCS_VIZ_TEMPLATES + "markdown",
                 ONTODOCS_VIZ_TEMPLATES + "d3",
                 ONTODOCS_VIZ_TEMPLATES + "misc",
+                ONTODOCS_VIZ_TEMPLATES + "spdx",
             ],
             'APP_DIRS':
             True,
@@ -203,6 +204,10 @@ def build_visualization(ontouri, g, viz_index, path=None, title="", theme=""):
 
     elif this_viz['ID'] == "sigma-force-directed":
         from .viz.viz_sigmajs import Dataviz
+        v = Dataviz(g, title)
+	
+    elif this_viz['ID'] == "spdx":
+        from .viz.viz_spdx import Dataviz
         v = Dataviz(g, title)
 
     else:
