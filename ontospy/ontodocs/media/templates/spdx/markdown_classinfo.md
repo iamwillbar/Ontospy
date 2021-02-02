@@ -40,7 +40,7 @@
 {{each.uri}}
 
 #### Description
-{{external_description|each.bestDescription|default:"--"}}
+{{external_description|default:"--"}}
 
 
 {% if each.ancestors %}
