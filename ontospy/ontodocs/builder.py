@@ -207,7 +207,7 @@ def build_visualization(ontouri, g, viz_index, path=None, title="", theme=""):
         v = Dataviz(g, title)
 	
     elif this_viz['ID'] == "spdx":
-        from .viz.viz_spdx import Dataviz
+        from .viz.viz_spdx import SPDXViz
         v = Dataviz(g, title)
 
     else:
