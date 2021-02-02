@@ -6,7 +6,7 @@
 # VIZ MARKDOWN - multiple file, markdown format
 # ==================
 
-import os, os.path, sys, file
+import os, os.path, sys
 import json
 
 from ..utils import *
