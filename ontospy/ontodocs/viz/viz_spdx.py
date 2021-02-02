@@ -6,7 +6,7 @@
 # VIZ MARKDOWN - multiple file, markdown format
 # ==================
 
-import os, sys
+import os, os.path, sys, file
 import json
 
 from ..utils import *
@@ -47,7 +47,7 @@ class SPDXViz(VizFactory):
                     "main_entity": entity,
                     "main_entity_type": "class",
                     "ontograph": self.ontospy_graph,
-                    "external_description": file.read(entity.slug + "_desc.md")
+                    "external_description": file.read(entity.slug + "_desc.md") if os.path.isfile(entity.slug + "_desc.md") else ""
                 }
                 contents = self._renderTemplate(
                     "spdx/markdown_classinfo.md",
