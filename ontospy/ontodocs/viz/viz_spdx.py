@@ -46,7 +46,8 @@ class SPDXViz(VizFactory):
                 extra_context = {
                     "main_entity": entity,
                     "main_entity_type": "class",
-                    "ontograph": self.ontospy_graph
+                    "ontograph": self.ontospy_graph,
+                    "external_description": file.read(entity.slug + "_desc.md")
                 }
                 contents = self._renderTemplate(
                     "spdx/markdown_classinfo.md",
