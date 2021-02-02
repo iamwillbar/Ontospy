@@ -51,6 +51,11 @@ VISUALIZATIONS_LIST = {
                            "ID": "sigma-force-directed",
                            "Title": "Sigma.js Force directed graph [alpha]",
                            "Description": "@todo",
+                       },
+                       {
+                           "ID": "spdx",
+                           "Title": "SPDX",
+                           "Description": "@todo",
                        }]
 }
 
