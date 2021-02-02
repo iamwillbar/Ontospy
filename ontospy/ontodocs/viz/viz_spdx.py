@@ -43,11 +43,16 @@ class SPDXViz(VizFactory):
 
             # BROWSER PAGES - CLASSES ======
             for entity in self.ontospy_graph.all_classes:
+                desc = ""
+                if os.path.isfile(entity.slug + "_desc.md"):
+                    file = open(entity.slug + "_desc.md")
+                    desc = file.read()
+                    
                 extra_context = {
                     "main_entity": entity,
                     "main_entity_type": "class",
                     "ontograph": self.ontospy_graph,
-                    "external_description": file.read(entity.slug + "_desc.md") if os.path.isfile(entity.slug + "_desc.md") else ""
+                    "external_description": desc
                 }
                 contents = self._renderTemplate(
                     "spdx/markdown_classinfo.md",
